@@ -14,8 +14,8 @@ runs:
         repository: weskoerber/zvm
         ref: main
         submodules: true
-    - name: Install Zig v${INPUT_ZIG_VERSION}
-      run: ./zvm --verbose install --use $INPUT_ZIG_VERSION
+    - name: set zig version env variable
+      run: echo "INPUT_ZIG_VERSION=${{ inputs.zig_version }}" >> "$GITHUB_ENV"
+    - name: install zig ${INPUT_ZIG_VERSION}
+      run: ./zvm --verbose install --use ${{ env.INPUT_ZIG_VERSION }}
       shell: sh
-      env:
-        INPUT_ZIG_VERSION: ${{ inputs.zig_version }}
