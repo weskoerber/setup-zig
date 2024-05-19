@@ -10,5 +10,6 @@ runs:
   using: composite
   steps:
     - name: Install Zig v${INPUT_ZIG_VERSION}
-      run: ./zvm/zvm --verbose install --use ${INPUT_ZIG_VERSION}
-      shell: bash
+      # run: ./zvm/zvm --verbose install --use ${INPUT_ZIG_VERSION}
+      run: ls -lah
+      shell: sh
