@@ -16,6 +16,7 @@ runs:
         submodules: true
     - name: set zig version env variable
       run: echo "INPUT_ZIG_VERSION=${{ inputs.zig_version }}" >> "$GITHUB_ENV"
+      shell: sh
     - name: install zig ${INPUT_ZIG_VERSION}
       run: ./zvm --verbose install --use ${{ env.INPUT_ZIG_VERSION }}
       shell: sh
