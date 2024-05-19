@@ -18,5 +18,5 @@ runs:
       run: ls -lah
       shell: sh
     - name: Install Zig v${INPUT_ZIG_VERSION}
-      run: ./zvm/zvm --verbose install --use ${INPUT_ZIG_VERSION}
+      run: ./zvm --verbose install --use ${INPUT_ZIG_VERSION}
       shell: sh
