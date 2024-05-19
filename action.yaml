@@ -1,0 +1,13 @@
+name: setup-zig
+author: weskoerber
+description: Sets up a Zig environment
+inputs:
+  zig_version:
+    description: Zig version to use
+    required: false
+    default: 'master'
+runs:
+  using: composite
+  steps:
+    - name: Install Zig v${INPUT_ZIG_VERSION}
+      run: ./zvm/zvm --verbose install --use ${INPUT_ZIG_VERSION}
