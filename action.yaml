@@ -14,9 +14,8 @@ runs:
         repository: weskoerber/zvm
         ref: chore/actions-test
         submodules: true
-    - name: list
-      run: ls -lah
-      shell: sh
     - name: Install Zig v${INPUT_ZIG_VERSION}
-      run: ./zvm --verbose install --use ${INPUT_ZIG_VERSION}
+      run: ./zvm --verbose install --use $INPUT_ZIG_VERSION
       shell: sh
+      env:
+        INPUT_ZIG_VERSION: ${{ inputs.zig_version }}
