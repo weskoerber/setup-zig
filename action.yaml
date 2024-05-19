@@ -11,6 +11,8 @@ runs:
   steps:
     - uses: actions/checkout@v4
       with:
+        name: weskoerber/zvm
+        ref: refs/heads/chore/actions-test
         submodules: true
     - name: list
       run: ls -lah
